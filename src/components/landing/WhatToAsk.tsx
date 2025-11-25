@@ -4,7 +4,7 @@ import React from "react";
 
 const WhatToAsk = () => {
   return (
-    <section className="relative py-30 px-6 bg-gradient-to-b from-background to-muted/20 outline-hidden">
+    <section id="about" className="relative py-30 px-6 bg-gradient-to-b from-background to-muted/20 outline-hidden">
       <div className="relative mx-auto max-w-7xl z-10">
         {/* header */}
         <div className="text-center mb-20">

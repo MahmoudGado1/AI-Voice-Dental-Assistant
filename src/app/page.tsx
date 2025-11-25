@@ -9,17 +9,17 @@ import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
 export default async function Home() {
-  const user  = await currentUser()
-  if(user)redirect("/dashboard")
+  const user = await currentUser();
+  if (user) redirect("/dashboard");
   return (
-  <div className="min-h-screen bg-background">
-    <Header/>
-    <Hero/>
-    <HowItWorks/>
-    <WhatToAsk/>
-    <PricingSection/>
-    <CTA/>
-    <Footer/>
-  </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      <Hero />
+      <HowItWorks />
+      <PricingSection />
+      <WhatToAsk />
+      <CTA />
+      <Footer />
+    </div>
   );
 }

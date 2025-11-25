@@ -33,7 +33,7 @@ model Doctor{
   name      String
   email     String   @unique
   phone     String
-  specialty String
+  speciality String
   bio       String?
   imageUrl  String?  
   gender    Gender

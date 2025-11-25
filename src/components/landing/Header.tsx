@@ -11,9 +11,9 @@ const Header = () => {
           <span className='font-semibold text-lg'>Dentwise</span>
         </Link>
         <div className='hidden md:flex items-center gap-8'>
-          <a href="/" className='text-muted-foreground hover:text-foreground'>How it works</a>
-          <a href="/" className='text-muted-foreground hover:text-foreground'>Pricing</a>
-          <a href="/" className='text-muted-foreground hover:text-foreground'>About</a>
+          <a href="#how-it-works" className='text-muted-foreground hover:text-foreground'>How it works</a>
+          <a href="#pricing" className='text-muted-foreground hover:text-foreground'>Pricing</a>
+          <a href="#about" className='text-muted-foreground hover:text-foreground'>About</a>
         </div>
         <div className="flex items-center gap-3">
           <SignInButton mode="modal">
