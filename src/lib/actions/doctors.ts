@@ -29,7 +29,7 @@ interface CreateDoctorInput {
   name: string;
   email: string;
   phone: string;
-  speciality: string;
+  specialty: string;
   gender: Gender;
   isActive: boolean;
 }
@@ -44,7 +44,7 @@ export async function createDoctor(input: CreateDoctorInput) {
         name: input.name,
         email: input.email,
         phone: input.phone,
-        specialty: input.speciality,
+        specialty: input.specialty,
         isActive: input.isActive,
         gender: input.gender,
         imageUrl: generateAvatar(input.name, input.gender),
@@ -96,7 +96,7 @@ export async function updateDoctor(input: UpdatedDoctorInput) {
         name:input.name,
         email:input.email,
         phone:input.phone,
-        specialty:input.speciality,
+        specialty:input.specialty,
         gender:input.gender,
         isActive:input.isActive
       }

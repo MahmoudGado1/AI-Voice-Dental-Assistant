@@ -80,9 +80,9 @@ function EditDoctorDialog({ isOpen, onClose, doctor }: EditDoctorDialogProbs) {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="speciality">Speciality</Label>
+                <Label htmlFor="specialty">specialty</Label>
                 <Input
-                  id="speciality"
+                  id="specialty"
                   value={editingDoctor.specialty}
                   onChange={(e) =>
                     setEditingDoctor({

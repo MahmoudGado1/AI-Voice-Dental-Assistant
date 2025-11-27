@@ -30,7 +30,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
     name: "",
     email: "",
     phone: "",
-    speciality: "",
+    specialty: "",
     gender: "MALE" as Gender,
     isActive: true,
   });
@@ -54,7 +54,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
       name: "",
       email: "",
       phone: "",
-      speciality: "",
+      specialty: "",
       gender: "MALE",
       isActive: true,
     });
@@ -83,12 +83,12 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="new-speciality">Speciality *</Label>
+              <Label htmlFor="new-specialty">specialty *</Label>
               <Input
-                id="new-speciality"
-                value={newDoctor.speciality}
+                id="new-specialty"
+                value={newDoctor.specialty}
                 onChange={(e) =>
-                  setNewDoctor({ ...newDoctor, speciality: e.target.value })
+                  setNewDoctor({ ...newDoctor, specialty: e.target.value })
                 }
                 placeholder="General Dentistry"
               />
@@ -161,7 +161,7 @@ function AddDoctorDialog({ isOpen, onClose }: AddDoctorDialogProps) {
           <Button
             onClick={handleSave}
             className="bg-primary hover:bg-primary/90"
-            disabled={!newDoctor.name || !newDoctor.email || createDoctorMutation.isPending || !newDoctor.speciality}
+            disabled={!newDoctor.name || !newDoctor.email || createDoctorMutation.isPending || !newDoctor.specialty}
           >
             {createDoctorMutation.isPending ? "Saving..." : "Add Doctor"}
           </Button>
