@@ -10,7 +10,18 @@ import { redirect } from "next/navigation";
 
 export default async function Home() {
   const user = await currentUser();
-  if (user) redirect("/dashboard");
+
+  if (user) {
+    const adminEmail = process.env.ADMIN_EMAIL;
+    const userEmail = user.emailAddresses[0]?.emailAddress;
+
+    if (userEmail === adminEmail) {
+      redirect("/admin");
+    }
+
+    redirect("/dashboard");
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
