@@ -33,8 +33,8 @@ async function ProPage() {
               </div>
             </div>
 
-            <div className="hidden lg:block">
-              <div className="w-32 h-32 flex justify-center items-center bg-gradient-to-br from-primary/20 to-primary/10 rounded-full">
+            <div className="hidden sm:block">
+              <div className="w-32 h-32 flex justify-center items-center bg-gradient-to-br from-primary/20 to-primary/10 rounded-full animate-pulse">
                 <CrownIcon className="w-16 h-16 text-primary" />
               </div>
             </div>
