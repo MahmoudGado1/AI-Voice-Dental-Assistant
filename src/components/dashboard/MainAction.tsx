@@ -73,7 +73,7 @@ function MainAction() {
               <div className="space-y-2">
                 <h2 className="text-xl font-bold">Book Appointment</h2>
                 <p className="text-muted-foreground text-sm">
-                  Schedule with verfied dentists in your area
+                  Schedule with verified dentists in your area
                 </p>
               </div>
             </div>
@@ -81,11 +81,11 @@ function MainAction() {
           <div className="space-y-3 mt-5">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Verfied dental professional</span>
+              <span>Verified dental professional</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
-              <span>Flexable scheduling</span>
+              <span>Flexible scheduling</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-primary rounded-full"></div>
