@@ -40,7 +40,7 @@ function DoctorsManagement() {
       <Card className="mb-12">
         <CardHeader className="flex items-center justify-between">
           <div>
-            <CardTitle>
+            <CardTitle className="mb-2">
               <StethoscopeIcon className="size-5 text-primary" /> Doctors
               Management
             </CardTitle>
@@ -61,7 +61,7 @@ function DoctorsManagement() {
             {doctors.map((doctor) => (
               <div
                 key={doctor.id}
-                className="flex items-center justify-between p-4 border border-border/50 bg-muted/30"
+                className="flex items-center justify-between max-md:flex-col gap-5  p-4 border border-border/50 bg-muted/30"
               >
                 <div className="flex items-center gap-4">
                   <Image
@@ -82,7 +82,7 @@ function DoctorsManagement() {
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-4 mt-1">
+                    <div className="flex items-center gap-4 mt-3">
                       <div className="flex items-center gap-1 text-xs text-muted-foreground">
                         <MailIcon className="h-3 w-3" />
                         {doctor.email}
@@ -96,7 +96,7 @@ function DoctorsManagement() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center gap-2">
                   <div className="text-center">
                     <div className="font-semibold text-primary">
                       {doctor.appointmentCount}

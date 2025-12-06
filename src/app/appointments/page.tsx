@@ -54,8 +54,32 @@ function AppointmentsPage() {
       {
         onSuccess: async (data) => {
           setBookedAppointment(data);
+
+          try {
+            const emailResponse = await fetch("/api/send-appointment-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                userEmail: data.patientEmail,
+                doctorName: data.doctorName,
+                appointmentDate: format(
+                  new Date(data.date),
+                  "EEEE, MMMM d, yyyy"
+                ),
+                appointmentTime: data.time,
+                appointmentType: appointmentType?.name,
+                duration: appointmentType?.duration,
+                price: appointmentType?.price,
+              }),
+            });
+            if (!emailResponse.ok) console.error("Failed to send confirmation email");
+          } catch (error) {
+            console.error("Error sending confirmation email:", error);
+          }
           setShowConfirmationModal(true);
-          
+
           setCurrentStep(1);
           setSelectedDentistId(null);
           setSelectedDate("");
@@ -67,7 +91,6 @@ function AppointmentsPage() {
         },
       }
     );
-
   };
   return (
     <>
@@ -138,12 +161,17 @@ function AppointmentsPage() {
         />
       )}
 
-       {userAppointments.length > 0 && (
+      {userAppointments.length > 0 && (
         <div className="mb-8 max-w-7xl mx-auto px-6 py-8">
-          <h2 className="text-xl font-semibold mb-4">Your Upcoming Appointments</h2>
+          <h2 className="text-xl font-semibold mb-4">
+            Your Upcoming Appointments
+          </h2>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {userAppointments.map((appointment) => (
-              <div key={appointment.id} className="bg-card border rounded-lg p-4 shadow-sm">
+              <div
+                key={appointment.id}
+                className="bg-card border rounded-lg p-4 shadow-sm"
+              >
                 <div className="flex items-center gap-3 mb-3">
                   <div className="size-10 bg-primary/10 rounded-full flex items-center justify-center">
                     <img
@@ -153,8 +181,12 @@ function AppointmentsPage() {
                     />
                   </div>
                   <div>
-                    <p className="font-medium text-sm">{appointment.doctorName}</p>
-                    <p className="text-muted-foreground text-xs">{appointment.reason}</p>
+                    <p className="font-medium text-sm">
+                      {appointment.doctorName}
+                    </p>
+                    <p className="text-muted-foreground text-xs">
+                      {appointment.reason}
+                    </p>
                   </div>
                 </div>
                 <div className="space-y-1 text-sm">
