@@ -203,7 +203,7 @@ function VapiWidget() {
             {/* user avatar */}
             <div className="relative size-32 mb-4">
               <Image
-                src={user?.imageUrl!}
+                src={user?.imageUrl! || ""}
                 alt="User"
                 width={128}
                 height={128}
