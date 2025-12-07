@@ -1,36 +1,82 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI Voice Dental Assistant
 
-## Getting Started
+![Next.js](https://img.shields.io/badge/Next.js-15.5.0-black?logo=next.js) 
+![React](https://img.shields.io/badge/React-18-blue?logo=react)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.5-teal?logo=tailwind-css)
+![Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?logo=vercel)
 
-First, run the development server:
+An **AI-powered voice assistant** for dental clinics, built with **Next.js**, **Clerk**, and **VAPI**.  
+Manage appointments, doctors, and clinic performance using both a dashboard and voice commands.
+
+---
+
+![Dashboard](/screenshots/dashboard.png)
+![Appointments](/screenshots/appointment.png)
+![Voice Assistant](/screenshots/voice.png)
+![Admin](/screenshots/admin.png)
+![Pro](/screenshots/pro.png)
+
+
+## 🚀 Features
+
+- **Voice Assistant** – Interact with the system using natural language.
+- **Appointment Management** – View, confirm, and complete patient appointments.
+- **Doctor Management** – Add, edit, and monitor doctor availability.
+- **Admin Dashboard** – Overview stats, total appointments, and active doctors.
+- **Authentication** – Secure login via [Clerk](https://clerk.com).
+- **Responsive UI** – Built with [shadcn/ui](https://ui.shadcn.com/) and TailwindCSS.
+
+---
+
+## 🛠 Tech Stack
+
+- **Frontend:** Next.js 15+, React, TailwindCSS, shadcn/ui  
+- **Backend:** Next.js API Routes, Prisma ORM  
+- **Database:** PostgreSQL (via Prisma)  
+- **Authentication:** Clerk  
+- **Voice Assistant:** VAPI  
+- **Icons:** lucide-react  
+
+---
+
+## 📥 Getting Started
+
+### 1. Clone the repository
 
 ```bash
+git clone https://github.com/MahmoudGado1/AI-Voice-Dental-Assistant.git
+cd AI-Voice-Dental-Assistant
+
+2. Install dependencies
+npm install
+# or
+yarn install
+# or
+pnpm install
+
+4. Run the development server
 npm run dev
 # or
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open http://localhost:3000
+ to view the app.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+ 🗂 Project Structure
+app/                  # Next.js app directory
+components/           # Reusable UI components
+hooks/                # Custom React hooks
+lib/                  # Helper functions and API clients
+prisma/               # Prisma schema & client
+public/               # Static assets (logo, images)
 
-## Learn More
+🧑‍💼 Admin Dashboard
 
-To learn more about Next.js, take a look at the following resources:
+URL: /admin
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Accessible only to the admin email defined in .env.local.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+View stats, manage doctors, and monitor appointments.
