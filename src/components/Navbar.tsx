@@ -9,7 +9,6 @@ import { usePathname } from "next/navigation";
 function Navbar() {
   const { user } = useUser();
   const pathname = usePathname();
-  
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-20 px-6 py-2 border-b border-border/50 bg-background/80 backdrop-blur-md h-16">
